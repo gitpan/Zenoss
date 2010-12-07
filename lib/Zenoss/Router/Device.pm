@@ -1336,7 +1336,7 @@ calls available to L<Zenoss>.
 =head1 METHODS
 
 The following is a list of available methods available for interaction with the Zenoss API.
-Please take note of the arguement requirements, defaults and return content.
+Please take note of the argument requirements, defaults and return content.
 
 =head2 $obj->device_addLocationNode()
 
@@ -1345,7 +1345,7 @@ contextUid must be a path to a Location.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 type (string) - Node type (always 'organizer' in this case)
 
@@ -1361,7 +1361,7 @@ address (string) - Physical address of the new location
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 type
 
@@ -1373,7 +1373,7 @@ id
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1395,7 +1395,7 @@ Returns the tree structure of an organizer hierarchy where the root node is the 
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 id (string) - Id of the root node of the tree to be returned
 
@@ -1403,7 +1403,7 @@ id (string) - Id of the root node of the tree to be returned
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 id
 
@@ -1411,7 +1411,7 @@ id
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1433,7 +1433,7 @@ Retrieves all of the components at a given UID. This method allows for paginatio
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of the device whose components are being retrieved
 
@@ -1455,7 +1455,7 @@ name (regex) - Used to filter the results
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -1463,7 +1463,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {start => 0, limit => 50, sort => 'name', dir => 'ASC'}
 
@@ -1487,7 +1487,7 @@ Retrieves all of the components set up to be used in a tree.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of the root of the tree to retrieve
 
@@ -1495,7 +1495,7 @@ uid (string) - Unique identifier of the root of the tree to retrieve
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -1503,7 +1503,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1523,7 +1523,7 @@ Given a component uid and the component search criteria, this retrieves the posi
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 componentUid (string) - Unique identifier of the component whose index to return
 
@@ -1541,7 +1541,7 @@ name (regex) - Used to filter the results
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 componentUid
 
@@ -1549,7 +1549,7 @@ componentUid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {sort => 'name', dir => 'ASC'}
 
@@ -1569,7 +1569,7 @@ Given an object identifier, this returns all of the editable fields on that obje
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of an object
 
@@ -1577,7 +1577,7 @@ uid (string) - Unique identifier of an object
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -1585,7 +1585,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1605,7 +1605,7 @@ Get the properties of a device or device organizer
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of an object
 
@@ -1615,7 +1615,7 @@ keys (list) - List of keys to include in the returned dictionary. If None then a
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -1623,7 +1623,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1645,7 +1645,7 @@ Sets the ProductInfo on a device. This method has the following valid keyword ar
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of a device
 
@@ -1661,7 +1661,7 @@ osProductName (string) - Operating system product name
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -1669,7 +1669,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1689,7 +1689,7 @@ Retrieves a list of devices. This method supports pagination.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of the organizer to get devices from
 
@@ -1707,7 +1707,7 @@ dir (string) - Sort order; can be either 'ASC' or 'DESC'
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -1715,7 +1715,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {start => 0, limit => 50, sort => 'name', dir => 'ASC'}
 
@@ -1739,7 +1739,7 @@ Moves the devices specified by uids to the organizer specified by 'target'.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uids ([string]) - List of device uids to move
 
@@ -1761,7 +1761,7 @@ dir (string) - Sort order; can be either 'ASC' or 'DESC'
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uids
 
@@ -1773,7 +1773,7 @@ hashcheck
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {sort => 'name', dir => 'ASC'}
 
@@ -1795,7 +1795,7 @@ Push changes on device(s) configuration to collectors.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uids ([string]) - List of device uids to push changes
 
@@ -1815,7 +1815,7 @@ dir (string) - Sort order; can be either 'ASC' or 'DESC'
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uids
 
@@ -1825,7 +1825,7 @@ hashcheck
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {sort => 'name', dir => 'ASC'}
 
@@ -1845,7 +1845,7 @@ Lock device(s) from changes.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uids ([string]) - List of device uids to lock
 
@@ -1871,7 +1871,7 @@ dir (string) - Sort order; can be either 'ASC' or 'DESC'
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uids
 
@@ -1881,7 +1881,7 @@ hashcheck
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {updates => JSON::false, deletion => JSON::false, sendevent => JSON::false, sort => 'name', dir => 'ASC'}
 
@@ -1901,7 +1901,7 @@ Reset IP address(es) of device(s) to the results of a DNS lookup or a manually s
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uids ([string]) - List of device uids with IP's to reset
 
@@ -1923,7 +1923,7 @@ ip (string) - IP to set device to. Empty string causes DNS lookup
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uids
 
@@ -1933,7 +1933,7 @@ hashcheck
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {sort => 'name', dir => 'ASC', ip => ''}
 
@@ -1953,7 +1953,7 @@ Reset IP address(es) of device(s) to the results of a DNS lookup or a manually s
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uids ([string]) - List of device uids to reset
 
@@ -1973,7 +1973,7 @@ dir (string) - Sort order; can be either 'ASC' or 'DESC'
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uids
 
@@ -1983,7 +1983,7 @@ hashcheck
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {sort => 'name', dir => 'ASC'}
 
@@ -2003,7 +2003,7 @@ Set the production state of device(s)
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uids ([string]) - List of device uids to set
 
@@ -2027,7 +2027,7 @@ dir (string) - Sort order; can be either 'ASC' or 'DESC'
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uids
 
@@ -2039,7 +2039,7 @@ hashcheck
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {sort => 'name', dir => 'ASC'}
 
@@ -2059,7 +2059,7 @@ Set device(s) priority.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uids ([string]) - List of device uids to set
 
@@ -2081,7 +2081,7 @@ dir (string) - Sort order; can be either 'ASC' or 'DESC'
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uids
 
@@ -2093,7 +2093,7 @@ hashcheck
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {sort => 'name', dir => 'ASC'}
 
@@ -2113,7 +2113,7 @@ Set device(s) collector.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uids ([string]) - List of device uids to set
 
@@ -2137,7 +2137,7 @@ dir (string) - Sort order; can be either 'ASC' or 'DESC'
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uids
 
@@ -2149,7 +2149,7 @@ hashcheck
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {sort => 'name', dir => 'ASC'}
 
@@ -2169,7 +2169,7 @@ Set the monitoring flag for component(s)
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uids ([string]) - List of component uids to set
 
@@ -2197,7 +2197,7 @@ name (string) - Component name to search for when loading ranges
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uids
 
@@ -2207,7 +2207,7 @@ hashcheck
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {monitor => JSON::false, start => 0, limit => 50, sort => 'name', dir => 'ASC'}
 
@@ -2227,7 +2227,7 @@ Lock component(s) from changes.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uids ([string]) - List of component uids to lock
 
@@ -2259,7 +2259,7 @@ name (string) - Component name to search for when loading ranges
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uids
 
@@ -2269,7 +2269,7 @@ hashcheck
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {updates => JSON::false, deletion => JSON::false, sendEvent => JSON::false, start => 0, limit => 50, sort => 'name', dir => 'ASC'}
 
@@ -2289,7 +2289,7 @@ Lock component(s) from changes.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uids ([string]) - List of component uids to delete
 
@@ -2315,7 +2315,7 @@ name (string) - Component name to search for when loading ranges
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uids
 
@@ -2325,7 +2325,7 @@ hashcheck
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {start => 0, limit => 50, sort => 'name', dir => 'ASC'}
 
@@ -2345,7 +2345,7 @@ Lock component(s) from changes.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uids ([string]) - List of device uids to remove
 
@@ -2367,7 +2367,7 @@ dir (string) - Sort order; can be either 'ASC' or 'DESC'
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uids
 
@@ -2377,7 +2377,7 @@ hashcheck
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {action => 'remove', sort => 'name', dir => 'ASC'}
 
@@ -2403,7 +2403,7 @@ Get events for a device.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid ([string]) - Device to get events for
 
@@ -2411,7 +2411,7 @@ uid ([string]) - Device to get events for
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -2419,7 +2419,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -2439,7 +2439,7 @@ Get a range of device uids.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 ranges ([integer]) - List of two integers that are the min/max values of a range of uids
 
@@ -2457,7 +2457,7 @@ dir (string) - Sort order; can be either 'ASC' or 'DESC'
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 ranges
 
@@ -2467,7 +2467,7 @@ hashcheck
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {sort => 'name', dir => 'ASC'}
 
@@ -2487,7 +2487,7 @@ Get a range of component uids.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 ranges ([integer]) - List of two integers that are the min/max values of a range of uids
 
@@ -2513,7 +2513,7 @@ name (string) - Component name to search for when loading ranges
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 ranges
 
@@ -2523,7 +2523,7 @@ hashcheck
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {start => 0, sort => 'name', dir => 'ASC'}
 
@@ -2543,7 +2543,7 @@ Get a list of user commands for a device uid.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Device to use to get user commands
 
@@ -2551,7 +2551,7 @@ uid (string) - Device to use to get user commands
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -2559,7 +2559,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -2579,7 +2579,7 @@ Get a list of available production states.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 NONE
 
@@ -2587,7 +2587,7 @@ NONE
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -2595,7 +2595,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -2615,7 +2615,7 @@ Get a list of available device priorities.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 NONE
 
@@ -2623,7 +2623,7 @@ NONE
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -2631,7 +2631,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -2651,7 +2651,7 @@ Get a list of available collectors.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 NONE
 
@@ -2659,7 +2659,7 @@ NONE
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -2667,7 +2667,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -2687,7 +2687,7 @@ Get a list of all device classes.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 NONE
 
@@ -2695,7 +2695,7 @@ NONE
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -2703,7 +2703,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -2725,7 +2725,7 @@ Get a list of all manufacturer names.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 NONE
 
@@ -2733,7 +2733,7 @@ NONE
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -2741,7 +2741,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -2763,7 +2763,7 @@ Get a list of all hardware product names from a manufacturer.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 manufacturer (string) - Manufacturer name
 
@@ -2771,7 +2771,7 @@ manufacturer (string) - Manufacturer name
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -2779,7 +2779,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {manufacturer => ''}
 
@@ -2801,7 +2801,7 @@ Get a list of all OS product names from a manufacturer.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 manufacturer (string) - Manufacturer name
 
@@ -2809,7 +2809,7 @@ manufacturer (string) - Manufacturer name
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -2817,7 +2817,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {manufacturer => ''}
 
@@ -2839,7 +2839,7 @@ Add a device.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 deviceName (string) - Name or IP of the new device
 
@@ -2879,7 +2879,7 @@ serialNumber (string) - Serial number of this device
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 deviceName
 
@@ -2889,7 +2889,7 @@ deviceClass
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {snmpCommunity => '', snmpPort => '161', collector => 'localhost', rackSlot => 0, productionState => 1000, comments => '', hwManufacturer => '', hwProductName => '', osManufacturer => '', osProductName => '', priority => 3, tag => '', serialNumber => ''}
 
@@ -2909,7 +2909,7 @@ Adds a local template on a device.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 deviceUid (string) - Device uid to have local template
 
@@ -2919,7 +2919,7 @@ templateId (string) - Name of the new template
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 deviceUid
 
@@ -2929,7 +2929,7 @@ templateId
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -2949,7 +2949,7 @@ Removes a locally defined template on a device.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 deviceUid (string) - Device uid that has local template
 
@@ -2959,7 +2959,7 @@ templateUid (string) - Name of the template to remove
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 deviceUid
 
@@ -2969,7 +2969,7 @@ templateUid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -2989,7 +2989,7 @@ Get a list of locally defined templates on a device.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Device uid to query for templates
 
@@ -2997,7 +2997,7 @@ uid (string) - Device uid to query for templates
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -3005,7 +3005,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -3025,7 +3025,7 @@ Get a list of available templates for a device.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 id (string) - Device uid to query for templates
 
@@ -3033,7 +3033,7 @@ id (string) - Device uid to query for templates
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 id
 
@@ -3041,7 +3041,7 @@ id
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -3061,7 +3061,7 @@ Get a list of unbound templates for a device.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Device uid to query for templates
 
@@ -3069,7 +3069,7 @@ uid (string) - Device uid to query for templates
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -3077,7 +3077,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -3097,7 +3097,7 @@ Get a list of bound templates for a device.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Device uid to query for templates
 
@@ -3105,7 +3105,7 @@ uid (string) - Device uid to query for templates
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -3113,7 +3113,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -3133,7 +3133,7 @@ Set a list of templates as bound to a device.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Device uid to bind templates to
 
@@ -3143,7 +3143,7 @@ templateIds ([string]) - List of template uids to bind to device
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -3153,7 +3153,7 @@ templateIds
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -3173,7 +3173,7 @@ Remove all bound templates from a device.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Device uid to remove bound templates from
 
@@ -3181,7 +3181,7 @@ uid (string) - Device uid to remove bound templates from
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -3189,7 +3189,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -3209,7 +3209,7 @@ Bind an unbound template or unbind a bound template from a device.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Device uid to bind/unbind template
 
@@ -3219,7 +3219,7 @@ templateUid (string) - Template uid to bind/unbind
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -3229,7 +3229,7 @@ templateUid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -3249,7 +3249,7 @@ Get a list of available templates on a device that can be overridden.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Device to query for overridable templates
 
@@ -3257,7 +3257,7 @@ uid (string) - Device to query for overridable templates
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -3265,7 +3265,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -3285,7 +3285,7 @@ Clear the Google Maps geocode cache.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 NONE
 
@@ -3293,7 +3293,7 @@ NONE
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -3301,7 +3301,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 

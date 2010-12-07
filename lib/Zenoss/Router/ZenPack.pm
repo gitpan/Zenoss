@@ -115,7 +115,7 @@ calls available to L<Zenoss>.
 =head1 METHODS
 
 The following is a list of available methods available for interaction with the Zenoss API.
-Please take note of the arguement requirements, defaults and return content.
+Please take note of the argument requirements, defaults and return content.
 
 =head2 $obj->zenpack_getEligiblePacks()
 
@@ -123,7 +123,7 @@ Get a list of eligible ZenPacks to add to.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 NONE
 
@@ -131,7 +131,7 @@ NONE
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -139,7 +139,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -161,7 +161,7 @@ Add an object to a ZenPack.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 topack (string) - Unique ID of the object to add to ZenPack
 
@@ -171,7 +171,7 @@ zenpack (string) - Unique ID of the ZenPack to add object to
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 topack
 
@@ -181,7 +181,7 @@ zenpack
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 

@@ -386,7 +386,7 @@ calls available to L<Zenoss>.
 =head1 METHODS
 
 The following is a list of available methods available for interaction with the Zenoss API.
-Please take note of the arguement requirements, defaults and return content.
+Please take note of the argument requirements, defaults and return content.
 
 =head2 $obj->events_query()
 
@@ -394,7 +394,7 @@ Query for events.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 limit (integer) - Max index of events to retrieve
 
@@ -416,7 +416,7 @@ criteria ([dictionary]) - A list of key-value pairs to to build query's where cl
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -424,7 +424,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {limit => 0, start => 0, sort => 'lastTime', dir => 'DESC', history => JSON::false}
 
@@ -448,7 +448,7 @@ Query history table for events.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 limit (integer) - Max index of events to retrieve
 
@@ -464,7 +464,7 @@ params (dictionary) - Key-value pair of filters for this search
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -472,7 +472,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {limit => 0, start => 0, sort => 'lastTime', dir => 'DESC', params => JSON::null}
 
@@ -496,7 +496,7 @@ Acknowledge event(s).
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 evids ([string]) - List of event IDs to acknowledge
 
@@ -520,7 +520,7 @@ asof (float) - Only acknowledge if there has been no state change since this tim
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -528,7 +528,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {direction => 'DESC', history => JSON::false}
 
@@ -548,7 +548,7 @@ Unacknowledge event(s).
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 evids ([string]) - List of event IDs to unacknowledge 
 
@@ -572,7 +572,7 @@ asof (float) - Only unacknowledge if there has been no state change since this t
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -580,7 +580,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {direction => 'DESC', history => JSON::false}
 
@@ -600,7 +600,7 @@ Reopen event(s).
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 evids ([string]) - List of event IDs to reopen 
 
@@ -624,7 +624,7 @@ asof (float) - Only reopen if there has been no state change since this time
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -632,7 +632,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {direction => 'DESC', history => JSON::false}
 
@@ -652,7 +652,7 @@ Close event(s).
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 evids ([string]) - List of event IDs to close 
 
@@ -676,7 +676,7 @@ asof (float) - Only close if there has been no state change since this time
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -684,7 +684,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {direction => 'DESC', history => JSON::false}
 
@@ -704,7 +704,7 @@ Get event details.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 evid (string) - Event ID to get details
 
@@ -714,7 +714,7 @@ history (boolean) - True to search the event history table instead of active eve
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 evid
 
@@ -722,7 +722,7 @@ evid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {history => JSON::false}
 
@@ -742,7 +742,7 @@ Write a message to an event's log.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 evid (string) - Event ID to log to
 
@@ -754,7 +754,7 @@ history (boolean) - True to use the event history table instead of active events
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 evid
 
@@ -764,7 +764,7 @@ message
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {history => JSON::false}
 
@@ -784,7 +784,7 @@ Associate event(s) with an event class.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 evids ([string]) - List of event ID's to classify
 
@@ -796,7 +796,7 @@ history (boolean) - True to use the event history table instead of active events
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 evids
 
@@ -808,7 +808,7 @@ message
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {history => JSON::false}
 
@@ -830,7 +830,7 @@ Create a new event.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 summary (string) - New event's summary
 
@@ -848,7 +848,7 @@ evclass (string) - Event class for the new event
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 summary
 
@@ -866,7 +866,7 @@ evclass
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -886,7 +886,7 @@ Get the current event console field column configuration.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - UID context to use
 
@@ -896,7 +896,7 @@ history (boolean) - True to use the event history table instead of active events
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -904,7 +904,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {history => JSON::false}
 

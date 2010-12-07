@@ -257,7 +257,7 @@ calls available to L<Zenoss>.
 =head1 METHODS
 
 The following is a list of available methods available for interaction with the Zenoss API.
-Please take note of the arguement requirements, defaults and return content.
+Please take note of the argument requirements, defaults and return content.
 
 =head2 $obj->network_discoverDevices()
 
@@ -265,7 +265,7 @@ Discover devices on a network.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of the network to discover
 
@@ -273,7 +273,7 @@ uid (string) - Unique identifier of the network to discover
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -281,7 +281,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -301,7 +301,7 @@ Discover devices on a network.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 newSubnet (string) - New subnet to add
 
@@ -311,7 +311,7 @@ contextUid (string) - Unique identifier of the network parent of the new subnet
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 newSubnet
 
@@ -321,7 +321,7 @@ contextUid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -341,7 +341,7 @@ Delete a subnet.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of the subnet to delete
 
@@ -349,7 +349,7 @@ uid (string) - Unique identifier of the subnet to delete
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -357,7 +357,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -377,7 +377,7 @@ Returns the tree structure of an organizer hierarchy where the root node is the 
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 id (string) - Id of the root node of the tree to be returned.
 
@@ -385,7 +385,7 @@ id (string) - Id of the root node of the tree to be returned.
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -393,7 +393,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {id => '/zport/dmd/Networks'}
 
@@ -413,7 +413,7 @@ Returns a dictionary of the properties of an object
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of an object
 
@@ -423,7 +423,7 @@ keys (list) - List of keys to include in the returned dictionary. If None then a
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -431,7 +431,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -451,7 +451,7 @@ Main method for setting attributes on a device or device organizer. This method 
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of an object
 
@@ -459,7 +459,7 @@ uid (string) - Unique identifier of an object
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -467,7 +467,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -487,7 +487,7 @@ Given a subnet, get a list of IP addresses and their relations.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of a subnet
 
@@ -503,7 +503,7 @@ order (string) - Sort order; can be either 'ASC' or 'DESC'
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -511,7 +511,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {start => 0, limit => 50, sort => 'name', order => 'ASC'}
 

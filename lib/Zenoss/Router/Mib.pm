@@ -81,7 +81,7 @@ calls available to L<Zenoss>.
 =head1 METHODS
 
 The following is a list of available methods available for interaction with the Zenoss API.
-Please take note of the arguement requirements, defaults and return content.
+Please take note of the argument requirements, defaults and return content.
 
 B<Mib is currently broken as Zenoss hasnt implemented the JSON interface>
 

@@ -195,7 +195,7 @@ calls available to L<Zenoss>.
 =head1 METHODS
 
 The following is a list of available methods available for interaction with the Zenoss API.
-Please take note of the arguement requirements, defaults and return content.
+Please take note of the argument requirements, defaults and return content.
 
 =head2 $obj->report_getReportTypes()
 
@@ -203,7 +203,7 @@ Get the available report types.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 NONE
 
@@ -211,7 +211,7 @@ NONE
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -219,7 +219,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -241,7 +241,7 @@ Returns the tree structure of an organizer hierarchy where the root node is the 
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 id (string) - (optional) Id of the root node of the tree to be returned
 
@@ -249,7 +249,7 @@ id (string) - (optional) Id of the root node of the tree to be returned
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -257,7 +257,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {id => '/zport/dmd/Reports'}
 
@@ -277,7 +277,7 @@ Add a new report or report organizer.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 nodeType (string) - Type of new node. Can either be 'organizer' or one of the report types returned from report_getReportTypes()
 
@@ -289,7 +289,7 @@ id (string) - The new node's ID
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 nodeType
 
@@ -301,7 +301,7 @@ id
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -323,7 +323,7 @@ Remove a report or report organizer.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - The UID of the node to delete
 
@@ -331,7 +331,7 @@ uid (string) - The UID of the node to delete
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -339,7 +339,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -359,7 +359,7 @@ Move a report or report organizer from one organizer to another.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uids ([string]) - The UID's of nodes to move
 
@@ -369,7 +369,7 @@ target (string) - The UID of the target Report organizer
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uids
 
@@ -379,7 +379,7 @@ target
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 

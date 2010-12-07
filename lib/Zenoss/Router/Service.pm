@@ -338,7 +338,7 @@ calls available to L<Zenoss>.
 =head1 METHODS
 
 The following is a list of available methods available for interaction with the Zenoss API.
-Please take note of the arguement requirements, defaults and return content.
+Please take note of the argument requirements, defaults and return content.
 
 =head2 $obj->service_addClass()
 
@@ -346,7 +346,7 @@ Add a new service class.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 contextUid (string) - Unique ID of the service ogranizer to add new class to
 
@@ -358,7 +358,7 @@ posQuery (dictionary) - Object defining a query where the returned position will
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 contextUid
 
@@ -370,7 +370,7 @@ posQuery
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -390,7 +390,7 @@ Retrieve a list of services based on a set of parameters.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 limit (integer) - Number of items to return; used in pagination
 
@@ -408,7 +408,7 @@ uid (string) - Service class UID to query
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -416,7 +416,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 { limit => JSON::null, uid => '/zport/dmd' }
 
@@ -442,7 +442,7 @@ Returns the tree structure of an organizer hierarchy.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 id (string) - Id of the root node of the tree to be returned
 
@@ -450,7 +450,7 @@ id (string) - Id of the root node of the tree to be returned
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 id
 
@@ -458,7 +458,7 @@ id
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -478,7 +478,7 @@ Returns the tree structure of an organizer hierarchy, only including organizers.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 id (string) - Id of the root node of the tree to be returned
 
@@ -486,7 +486,7 @@ id (string) - Id of the root node of the tree to be returned
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 id
 
@@ -494,7 +494,7 @@ id
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -514,7 +514,7 @@ Get the properties of a service.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of a service
 
@@ -524,7 +524,7 @@ keys (list) - List of keys to include in the returned dictionary. If None then a
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -532,7 +532,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -554,7 +554,7 @@ Set attributes on a service. This method accepts any keyword argument for the pr
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of a service
 
@@ -562,7 +562,7 @@ uid (string) - Unique identifier of a service
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -570,7 +570,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -590,7 +590,7 @@ Get a list of instances for a service UID.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Service UID to get instances of
 
@@ -608,7 +608,7 @@ dir (string) - Sort order; can be either 'ASC' or 'DESC'
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -616,7 +616,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {start => 0, limit => 50, sort => 'name', dir => 'ASC}
 
@@ -638,7 +638,7 @@ Move service(s) from one organizer to another.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 sourceUids ([string]) - UID(s) of the service(s) to move
 
@@ -648,7 +648,7 @@ targetUid (string) - UID of the organizer to move to
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 sourceUids
 
@@ -658,7 +658,7 @@ targetUid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -678,7 +678,7 @@ Get a list of unmonitored start modes for a Windows service.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique ID of a Windows service.
 
@@ -686,7 +686,7 @@ uid (string) - Unique ID of a Windows service.
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -694,7 +694,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -714,7 +714,7 @@ Get a list of monitored start modes for a Windows service.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique ID of a Windows service.
 
@@ -722,7 +722,7 @@ uid (string) - Unique ID of a Windows service.
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -730,7 +730,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 

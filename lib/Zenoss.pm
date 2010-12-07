@@ -5,7 +5,7 @@ use Moose;
 use Zenoss::Connector;
 use Zenoss::Router;
 
-our $VERSION = '1.04';
+our $VERSION = '1.05';
 
 #**************************************************************************
 # Public methods
@@ -86,9 +86,9 @@ Zenoss - Perl interface to the Zenoss JSON API
 
 =head1 DESCRIPTION
 
-The Zenoss Perl module ties components together that are vital to communicating with
+The L<Zenoss> Perl module ties components together that are vital to communicating with
 the Zenoss JSON API.  This module is a full service implementation that provides access
-to all documented API calls by Zenoss Monitoring System.  Essentially, anything that
+to all documented API calls by the Zenoss Monitoring System.  Essentially, anything that
 can be accomplished via the Zenoss UI can be done programmatically via Perl.
 
 To get an idea of what requests can be issued to the Zenoss JSON API, please review
@@ -146,9 +146,9 @@ L<Zenoss::Router::ZenPack>
 
 =back
 
-The documentation for these modules were mostly taken from the Zenoss JSON API docs.  Keep in mind
-that their programming is based around python, so descriptions such as dictionaries will be represented
-as hashes in PERL.
+The documentation for these modules was mostly taken from the Zenoss JSON API docs.  Keep in mind
+that their (Zenoss Monitoring System) programming is based around python, so descriptions such as 
+dictionaries will be represented as hashes in Perl.
 
 =head1 METHODS
 
@@ -156,8 +156,8 @@ Available methods provided by this module.
 
 =head2 $obj->connect({})
 
-This method instantiates an instance of Zenoss.  Currently it accepts the following
-attributes.  Note, these attributes are described in detail at L<Zenoss::Connector>.
+This method instantiates an instance of L<Zenoss>.  Currently it accepts the following
+arguments.  Note, these arguments are described in detail at L<Zenoss::Connector>.
 
 =over
 
@@ -183,24 +183,30 @@ timeout
 
 Here are some notes regarding this interface.
 
-=head2 Zenoss JSON API Attributes
+=head2 Zenoss JSON API Arguments
 
-=head3 Attributes in methods
+=head3 Arguments in methods
 
-When calling the various router methods available, note that any attribute you submit will be
-converted to JSON and transmitted to the API.
+When calling the various router methods available, note that any argument you submit will be
+converted to JSON and transmitted to the Zenoss API.
 
 For example:
-    $api->device_getDevices({foo => 'bar'});
 
-The above code will transmit an attribute, in JSON, of foo with a value of bar to the API.
+    $api->device_getDevices(
+        {
+            foo => 'bar',
+        }
+    );
 
-Its also interesting to point out that each router method has an attribute definition.  If you
-attempt to call a method that requires a specific attribute, and its omitted, it will croak.
+The above code will transmit an argument, in JSON, of foo with a value of bar to the API.
+
+Its also interesting to point out that each router method has an argument definition hard coded.
+If you attempt to call a method that requires a specific argument, and its omitted, it will croak.
 
 =head3 JSON true, false, null
 
-In the event that you need to use a true, false or null, the value can be submitted with:
+Some router methods accept boolean arguments.  In the event that you need to use a true, false
+or null, the value can be submitted with:
 
 =over
 
@@ -220,7 +226,7 @@ JSON::null
 
 For sake of clarity, say we need to add a device, but we want to also want to model the device
 after its added.  Reading L<Zenoss::Router::Device> states that $obj->device_addDevice()
-has a parameter of 'model', which is a boolean.  With that said we can do the following:
+has an available argument of 'model', which is a boolean.  With that said we can do the following:
 
     my $response = $api->device_addDevice(
         {
@@ -233,7 +239,7 @@ has a parameter of 'model', which is a boolean.  With that said we can do the fo
 =head2 Error handling
 
 Some methods Carp, so its always good to always try and trap exceptions.  This is mostly limited to
-when attempting to establish connections to the API, API timeouts, and attribute checking.  Error 
+when attempting to establish connections to the API, API timeouts, and argument checking.  Error 
 handling of Zenoss API responses can be handled with the available methods in L<Zenoss::Response>.
 
 =head1 DOCUMENTATION
@@ -241,7 +247,7 @@ handling of Zenoss API responses can be handled with the available methods in L<
 Please let me know if there is trouble with the documentation.  I attempted to put a vast amount of
 information together all at once, so there may be some mistakes.  If you have a question
 about implementing something described in the documentation, let me know so I can clarify.  However,
-please do not take advantage of this and only ask a question if you're really stuck!
+please do not take advantage of this and only ask a question if you're really stuck.
 
 =head1 SEE ALSO
 

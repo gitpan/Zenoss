@@ -167,7 +167,7 @@ L<Zenoss::Router::Template>
 =head1 METHODS
 
 The following is a list of available methods available for interaction with the Zenoss API.
-Please take note of the arguement requirements, defaults and return content.
+Please take note of the argument requirements, defaults and return content.
 
 =head2 $obj->addNode()
 
@@ -175,7 +175,7 @@ Add a node to the existing tree underneath the node specified by the context UID
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 type (string) - Either 'class' or 'organizer'
 
@@ -189,7 +189,7 @@ description (string) - Describes this new node
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 type
 
@@ -201,7 +201,7 @@ id
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -222,7 +222,7 @@ B<NOTE:> You can not delete a root node of a tree
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of the node we wish to delete
 
@@ -230,7 +230,7 @@ uid (string) - Unique identifier of the node we wish to delete
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -238,7 +238,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -258,7 +258,7 @@ Move the organizer uid to be underneath the organizer specified by the targetUid
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 targetUid (string) - New parent of the organizer
 
@@ -268,7 +268,7 @@ organizerUid (string) - The organizer to move
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 targetUid
 
@@ -278,7 +278,7 @@ organizerUid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 

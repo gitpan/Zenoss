@@ -1020,7 +1020,7 @@ calls available to L<Zenoss>.
 =head1 METHODS
 
 The following is a list of available methods available for interaction with the Zenoss API.
-Please take note of the arguement requirements, defaults and return content.
+Please take note of the argument requirements, defaults and return content.
 
 =head2 $obj->template_getTemplates()
 
@@ -1028,7 +1028,7 @@ Get all templates.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 NONE
 
@@ -1036,7 +1036,7 @@ NONE
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -1044,7 +1044,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1070,7 +1070,7 @@ Get a list of available device classes where new templates can be added.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 NONE
 
@@ -1078,7 +1078,7 @@ NONE
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -1086,7 +1086,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1106,7 +1106,7 @@ Add a template to a device class.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 id (string) - Unique ID of the template to add
 
@@ -1116,7 +1116,7 @@ targetUid (string) - Unique ID of the device class to add template to
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 id
 
@@ -1126,7 +1126,7 @@ targetUid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1146,7 +1146,7 @@ Delete a template.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique ID of the template to delete
 
@@ -1154,7 +1154,7 @@ uid (string) - Unique ID of the template to delete
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -1162,7 +1162,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1182,7 +1182,7 @@ Get the thresholds for a template.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique ID of a template
 
@@ -1190,7 +1190,7 @@ uid (string) - Unique ID of a template
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -1198,7 +1198,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1218,7 +1218,7 @@ Get a threshold's details.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique ID of a threshold
 
@@ -1226,7 +1226,7 @@ uid (string) - Unique ID of a threshold
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -1234,7 +1234,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1256,7 +1256,7 @@ Get a list of available data points for a template.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique ID of a template
 
@@ -1264,7 +1264,7 @@ uid (string) - Unique ID of a template
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -1272,7 +1272,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1292,7 +1292,7 @@ Add a new data point to a data source.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 dataSourceUid (string) - Unique ID of the data source to add data point to
 
@@ -1302,7 +1302,7 @@ name (string) - ID of the new data point
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 dataSourceUid
 
@@ -1312,7 +1312,7 @@ name
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1332,7 +1332,7 @@ Add a new data source to a template.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 templateUid (string) - Unique ID of the template to add data source to
 
@@ -1344,7 +1344,7 @@ type (string) - Type of the new data source. From getDataSourceTypes()
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 templateUid
 
@@ -1356,7 +1356,7 @@ type
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1376,7 +1376,7 @@ Get the data sources for a template.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 id (string) - Unique ID of a template
 
@@ -1384,7 +1384,7 @@ id (string) - Unique ID of a template
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 id
 
@@ -1392,7 +1392,7 @@ id
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1412,7 +1412,7 @@ Get a data source's details.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique ID of a data source
 
@@ -1420,7 +1420,7 @@ uid (string) - Unique ID of a data source
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -1428,7 +1428,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1450,7 +1450,7 @@ Get a data point's details.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique ID of a data point
 
@@ -1458,7 +1458,7 @@ uid (string) - Unique ID of a data point
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -1466,7 +1466,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1488,7 +1488,7 @@ Set attributes on an object. This method accepts any keyword argument for the pr
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of an object
 
@@ -1496,7 +1496,7 @@ uid (string) - Unique identifier of an object
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -1504,7 +1504,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1524,7 +1524,7 @@ Add a threshold.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of template to add threshold to
 
@@ -1538,7 +1538,7 @@ dataPoints ([string]) - List of data points to select for this threshold
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -1552,7 +1552,7 @@ dataPoints
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1572,7 +1572,7 @@ Remove a threshold.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of threshold to remove
 
@@ -1580,7 +1580,7 @@ uid (string) - Unique identifier of threshold to remove
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -1588,7 +1588,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1608,7 +1608,7 @@ Get a list of available threshold types.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 NONE
 
@@ -1616,7 +1616,7 @@ NONE
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -1624,7 +1624,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1644,7 +1644,7 @@ Get a list of available data source types.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 NONE
 
@@ -1652,7 +1652,7 @@ NONE
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -1660,7 +1660,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1680,7 +1680,7 @@ Get the graph definitions for a template.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique ID of a template
 
@@ -1688,7 +1688,7 @@ uid (string) - Unique ID of a template
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -1696,7 +1696,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1716,7 +1716,7 @@ Add a data point to a graph.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 dataPointUid (string) - Unique ID of the data point to add to graph
 
@@ -1728,7 +1728,7 @@ includeThresholds (boolean) - True to include related thresholds
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 dataPointUid
 
@@ -1738,7 +1738,7 @@ graphUid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 { includeThresholds => JSON::false }
 
@@ -1758,7 +1758,7 @@ Get a list of available device classes to copy a template to.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique ID of the template to copy
 
@@ -1768,7 +1768,7 @@ query (string) - Filter the returned targets' names based on this parameter
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -1776,7 +1776,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 { query => '' }
 
@@ -1796,7 +1796,7 @@ Copy a template to a device or device class.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique ID of the template to copy
 
@@ -1806,7 +1806,7 @@ targetUid (string) - Unique ID of the device or device class to bind to template
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -1816,7 +1816,7 @@ targetUid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1836,7 +1836,7 @@ Add a new graph definition to a template.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 templateUid (string) - Unique ID of the template to add graph definition to
 
@@ -1846,7 +1846,7 @@ graphDefinitionId (string) - ID of the new graph definition
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 templateUid
 
@@ -1856,7 +1856,7 @@ graphDefinitionId
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1876,7 +1876,7 @@ Delete a data source.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique ID of the data source to delete
 
@@ -1884,7 +1884,7 @@ uid (string) - Unique ID of the data source to delete
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -1892,7 +1892,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1912,7 +1912,7 @@ Delete a data point.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique ID of the data point to delete
 
@@ -1920,7 +1920,7 @@ uid (string) - Unique ID of the data point to delete
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -1928,7 +1928,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1948,7 +1948,7 @@ Delete a graph definition.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique ID of the graph definition to delete
 
@@ -1956,7 +1956,7 @@ uid (string) - Unique ID of the graph definition to delete
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -1964,7 +1964,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -1984,7 +1984,7 @@ Delete a graph point.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique ID of the graph point to delete
 
@@ -1992,7 +1992,7 @@ uid (string) - Unique ID of the graph point to delete
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -2000,7 +2000,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -2020,7 +2020,7 @@ Get a list of graph points for a graph definition.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique ID of a graph definition
 
@@ -2028,7 +2028,7 @@ uid (string) - Unique ID of a graph definition
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -2036,7 +2036,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -2056,7 +2056,7 @@ Get the properties of an object.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of an object
 
@@ -2064,7 +2064,7 @@ uid (string) - Unique identifier of an object
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -2072,7 +2072,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -2094,7 +2094,7 @@ Add a threshold to a graph definition.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 graphUid (string) - Unique ID of the graph definition to add threshold to
 
@@ -2104,7 +2104,7 @@ thresholdUid (string) - Unique ID of the threshold to add
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 graphUid
 
@@ -2114,7 +2114,7 @@ thresholdUid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -2134,7 +2134,7 @@ Add a custom graph point to a graph definition.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 graphUid (string) - Unique ID of the graph definition to add graph point to
 
@@ -2146,7 +2146,7 @@ customType (string) - Type of the new graph point. From getGraphInstructionTypes
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 graphUid
 
@@ -2158,7 +2158,7 @@ customType
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -2178,7 +2178,7 @@ Get a list of available instruction types for graph points.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 NONE
 
@@ -2186,7 +2186,7 @@ NONE
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -2194,7 +2194,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -2214,7 +2214,7 @@ Sets the sequence of graph points in a graph definition.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uids ([string]) - List of graph point UID's in desired order
 
@@ -2222,7 +2222,7 @@ uids ([string]) - List of graph point UID's in desired order
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uids
 
@@ -2230,7 +2230,7 @@ uids
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -2250,7 +2250,7 @@ Get a graph definition.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique ID of the graph definition to retrieve
 
@@ -2258,7 +2258,7 @@ uid (string) - Unique ID of the graph definition to retrieve
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -2266,7 +2266,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -2286,7 +2286,7 @@ Set attributes on an graph definition. This method accepts any keyword argument 
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of an object
 
@@ -2294,7 +2294,7 @@ uid (string) - Unique identifier of an object
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -2302,7 +2302,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -2322,7 +2322,7 @@ Sets the sequence of graph definitions.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uids ([string]) - List of graph definition UID's in desired order
 
@@ -2330,7 +2330,7 @@ uids ([string]) - List of graph definition UID's in desired order
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uids
 
@@ -2338,7 +2338,7 @@ uids
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 

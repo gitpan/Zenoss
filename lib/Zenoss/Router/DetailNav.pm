@@ -139,7 +139,7 @@ calls available to L<Zenoss>.
 =head1 METHODS
 
 The following is a list of available methods available for interaction with the Zenoss API.
-Please take note of the arguement requirements, defaults and return content.
+Please take note of the argument requirements, defaults and return content.
 
 The documentation here is a bit sketcky as I dont have all the information.  What I've placed here is what I know
 from reading the Zenoss JSON API documentation.  In the event the method calls become clearer I will update this.
@@ -150,7 +150,7 @@ return a list of Detail navigation configurations. Can be used to create navigat
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 NONE
 
@@ -158,7 +158,7 @@ NONE
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -166,7 +166,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -186,7 +186,7 @@ Unknown
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 NONE
 
@@ -194,7 +194,7 @@ NONE
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -202,7 +202,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -222,7 +222,7 @@ Unknown
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid
 
@@ -230,7 +230,7 @@ uid
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -238,7 +238,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 

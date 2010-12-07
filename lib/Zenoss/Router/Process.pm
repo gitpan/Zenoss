@@ -250,13 +250,18 @@ This module is NOT instantiated directly.  To call methods from this module crea
 instance of L<Zenoss>.  This document serves as a resource of available Zenoss API
 calls available to L<Zenoss>.
 
+=head1 METHODS
+
+The following is a list of available methods available for interaction with the Zenoss API.
+Please take note of the argument requirements, defaults and return content.
+
 =head2 $obj->process_getTree()
 
 Returns the tree structure of an organizer hierarchy where the root node is the organizer identified by the id parameter.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 id (string) - Id of the root node of the tree to be returned
 
@@ -264,7 +269,7 @@ id (string) - Id of the root node of the tree to be returned
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 id
 
@@ -274,7 +279,7 @@ target
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -294,7 +299,7 @@ Move a process or organizer from one organizer to another.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - UID of the process or organizer to move
 
@@ -304,7 +309,7 @@ targetUid (string) - UID of the organizer to move to
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -314,7 +319,7 @@ targetUid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -334,7 +339,7 @@ Get the properties of a process.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of a process
 
@@ -344,7 +349,7 @@ keys (list) - List of keys to include in the returned dictionary. If None then a
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -352,7 +357,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -372,7 +377,7 @@ Set attributes on a process. This method accepts any keyword argument for the pr
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Unique identifier of a process
 
@@ -380,7 +385,7 @@ uid (string) - Unique identifier of a process
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -388,7 +393,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -408,7 +413,7 @@ Get a list of instances for a process UID.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uid (string) - Process UID to get instances of
 
@@ -426,7 +431,7 @@ dir (string) - Sort order; can be either 'ASC' or 'DESC'
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uid
 
@@ -434,7 +439,7 @@ uid
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 {start => 0, limit => 50, sort => 'name', dir => 'ASC'}
 
@@ -456,7 +461,7 @@ Get the current processes sequence.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 NONE
 
@@ -464,7 +469,7 @@ NONE
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 N/A
 
@@ -472,7 +477,7 @@ N/A
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 
@@ -492,7 +497,7 @@ Set the current processes sequence.
 
 =over
 
-=item PARAMETERS
+=item ARGUMENTS
 
 uids ([string]) - The set of process uid's in the desired sequence
 
@@ -500,7 +505,7 @@ uids ([string]) - The set of process uid's in the desired sequence
 
 =over
 
-=item REQUIRED PARAMETERS
+=item REQUIRED ARGUMENTS
 
 uids
 
@@ -508,7 +513,7 @@ uids
 
 =over
 
-=item DEFAULT PARAMETERS
+=item DEFAULT ARGUMENTS
 
 N/A
 

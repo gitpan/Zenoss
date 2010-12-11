@@ -5,7 +5,7 @@ use Moose;
 use Zenoss::Connector;
 use Zenoss::Router;
 
-our $VERSION = '1.05';
+our $VERSION = '1.06';
 
 #**************************************************************************
 # Public methods
@@ -16,7 +16,7 @@ our $VERSION = '1.05';
 sub connect {
     my ($self, $args) = @_;
     return $self->_connect($args);
-}
+} # END connect
 
 #**************************************************************************
 # Private methods
@@ -69,9 +69,9 @@ Zenoss - Perl interface to the Zenoss JSON API
     print $response->json();
     print $response->http_code();
     
-    # get the response in a hashref data structure
-    my $response_hash = $response->hash();
-    print Dumper $response_hash;
+    # get the response in a perl reference
+    my $ref = $response->decoded();
+    print Dumper $ref;
     
     # Query events, with history, and only return
     # events that have a severity of 0,1,2,3,4 or 5

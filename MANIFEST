@@ -2,6 +2,7 @@ Changes
 lib/Zenoss.pm
 lib/Zenoss/Connector.pm
 lib/Zenoss/Error.pm
+lib/Zenoss/Examples.pod
 lib/Zenoss/MetaHelper.pm
 lib/Zenoss/Response.pm
 lib/Zenoss/Router.pm

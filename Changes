@@ -19,3 +19,8 @@ Revision history for Zenoss
 
 1.05        Tue Dec  7 12:25:01 EST 2010
             - Found some other bits on the documentation that required clarification.
+
+1.06        Fri Dec 10 17:16:21 EST 2010
+            - Zenoss::Response hash() was renamed to decoded().  This is because JSON can return an ARRAYREF as well
+            - Zenoss::Response hash(), now called decoded(), now only returns the result JSON data structure, unless result doesnt exist
+            - New attributes in Zenoss::Response received_tid and send_tid

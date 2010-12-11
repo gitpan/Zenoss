@@ -28,24 +28,71 @@ has handler => (
     required    => 1,
 );
 
+# Perl reference format of the JSON return data
+has decoded => (
+    is          => 'ro',
+    isa         => 'Any',
+    builder     => '_build_decoded',
+    lazy        => 1,
+    init_arg    => undef,
+);
+
+# Transaction ID that was received from the Zenoss server
+has received_tid => (
+    is          => 'ro',
+    isa         => 'Num',
+    builder     => '_build_received_tid',
+    writer      => '_set_received_tid',
+    lazy        => 1,
+    init_arg    => undef,
+);
+
 # Transaction ID that was sent to the Zenoss server
-has transaction_id => (
+# This is passed from Zenoss::Router
+has sent_tid => (
     is          => 'ro',
     isa         => 'Num',
     required    => 1,
 );
 
 #**************************************************************************
-# Public Methods
+# Private Methods
 #**************************************************************************
 #======================================================================
-# hash
+# _build_decoded
 #======================================================================
-sub hash  {
+sub _build_decoded {
     my $self = shift;
+
     my $json_decoder = JSON->new->allow_nonref;
-    return $json_decoder->decode($self->json);
-} # END hash
+    my $json_decoded = $json_decoder->decode($self->json);
+
+    # Set the received_tid if we have it
+    if (exists($json_decoded->{'tid'})) {
+        $self->_set_received_tid($json_decoded->{'tid'});
+    }
+
+    # Return result set
+    if (exists($json_decoded->{'result'})) {
+        # result structure should be there, so return this
+        return $json_decoded->{'result'};
+    } else {
+        # if not return what we have
+        return $json_decoded;
+    }
+} # END _build_decoded
+
+#======================================================================
+# _build_received_tid
+#======================================================================
+sub _build_received_tid  {
+    my $self = shift;
+
+    # just call _build_decoded - it does the same thing
+    # its easier to just convert the JSON to a hash and pull it out
+    # of the data structure
+    $self->_build_decoded;
+} # END _build_received_tid
 
 #**************************************************************************
 # Package end
@@ -83,9 +130,9 @@ Zenoss::Response - Handles responses from Zenoss::Router
     print $response->json();
     print $response->http_code();
     
-    # get the response in hashref form
-    my $response_hash = $response->hash();
-    print Dumper $response_hash;
+    # get the response in reference form
+    my $reference = $response->decoded();
+    print Dumper $reference;
 
 =head1 DESCRIPTION
 
@@ -100,14 +147,16 @@ Please review the SYNOPSIS for examples.
 
 Attributes can be retrieved by calling $obj->attribute.
 
-=head2 transaction_id
+=head2 sent_tid
 
 This attribute is set upon the creation of Zenoss::Response by Zenoss::Router.  Each
-request issued to the Zenoss API is coded with a transaction_id (tid).  The response transaction_id
-should match the transaction_id of the inital request.  This attribute is provided to allow
-the ability to check if the request transaction id matches response transaction id.  This may
-not be greatly important now, but will show its value once composite transactions are supported
-by L<Zenoss> (IE send multiple requests in one call).
+request issued to the Zenoss API is coded with a transaction ID (tid).  This can be compared
+with the received_tid to ensure that the proper response was received for what was requested.
+
+=head2 received_tid
+
+This attribute is set by extracting the transaction ID (tid) from the response Zenoss sends.  This
+can be compared with the sent_tid to ensure that the proper response was received for what was requested.
 
 =head1 METHODS
 
@@ -115,9 +164,9 @@ by L<Zenoss> (IE send multiple requests in one call).
 
 Returns the response, from the Zenoss API request, in JSON format.
 
-=head2 $obj->hash()
+=head2 $obj->decoded()
 
-Returns the response, from the Zenoss API request, in a PERL hashref.
+Returns the result response, from the Zenoss API request, in a PERL reference.
 
 =head2 $obj->raw_response()
 
@@ -142,13 +191,15 @@ attribute is not set then the official name of <code> (see HTTP::Status) is subs
 
 =head2 $obj->is_success()
 
-Returns true if the response was successful.
+Returns true if the http response was successful.  Note this does not mean the API request
+was successful or not.
 
 See HTTP::Status for the meaning of these.
 
 =head2 $obj->is_error()
 
-Returns true if the response had an error.
+Returns true if the http response had an error.  Note this does not mean the API request
+was successful or not.
 
 See HTTP::Status for the meaning of these.
 
@@ -167,11 +218,13 @@ Calculates the "current age" of the response as specified by RFC 2616 section 13
 The age of a response is the time since it was sent by the origin server. The returned value
 is a number representing the age in seconds.
 
-=head2 $obj->transaction_id()
+=head2 $obj->received_tid()
 
-Returns the transaction_id (tid) of the request to the Zenoss API.  This can be compared to
-the tid in $obj->json() or $obj->hash(); Zenoss should return the same tid that was sent in
-the inital request.
+Returns the transaction id (tid) that was returned by Zenoss.
+
+=head2 $obj->sent_tid()
+
+Returns the transaction id (tid) that was sent to Zenoss
 
 =head1 SEE ALSO
 

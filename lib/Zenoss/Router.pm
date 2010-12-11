@@ -128,11 +128,11 @@ sub _router_request {
     $query->content_type($JSON_CONTENT_TYPE);
     $query->content($json_encoder->encode($JSON_DATA));
 
-    # Return Zenoss::Handler object
+    # Return Zenoss::Response object
     return Zenoss::Response->new(
         {
             handler             => $self->_agent->request($query),
-            transaction_id      => $self->_transaction_count,
+            sent_tid            => $self->_transaction_count,
         }
     );
 } # END _router_request

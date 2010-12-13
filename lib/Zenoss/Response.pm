@@ -31,7 +31,7 @@ has handler => (
 # Perl reference format of the JSON return data
 has decoded => (
     is          => 'ro',
-    isa         => 'Any',
+    isa         => 'Ref',
     builder     => '_build_decoded',
     lazy        => 1,
     init_arg    => undef,

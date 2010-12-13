@@ -3,7 +3,7 @@
 
 =head1 NAME
 
-Perl examples with the Zenoss JSON API
+Examples covering the Zenoss JSON API
 
 =head1 OVERVIEW
 

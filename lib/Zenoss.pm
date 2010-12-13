@@ -5,7 +5,7 @@ use Moose;
 use Zenoss::Connector;
 use Zenoss::Router;
 
-our $VERSION = '1.06';
+our $VERSION = '1.07';
 
 #**************************************************************************
 # Public methods
@@ -83,6 +83,10 @@ Zenoss - Perl interface to the Zenoss JSON API
             }
         }
     );
+
+=head1 PREREQUISITES
+
+Zenoss version >= 3.0 is required
 
 =head1 DESCRIPTION
 

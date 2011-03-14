@@ -5,7 +5,7 @@ use Moose;
 use Zenoss::Connector;
 use Zenoss::Router;
 
-our $VERSION = '1.07';
+our $VERSION = '1.08';
 
 #**************************************************************************
 # Public methods
@@ -26,11 +26,14 @@ sub connect {
 #======================================================================
 sub _connect {
     my ($self, $args) = @_;
-    Zenoss::Router->new(
+    my $router = Zenoss::Router->new(
         {
             connector => Zenoss::Connector->new($args),
         }
     );
+    
+    $router->_process_login;
+    return $router;
 } # END connect
 
 #**************************************************************************

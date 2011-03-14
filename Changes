@@ -28,3 +28,7 @@ Revision history for Zenoss
 1.07        Mon Dec 13 10:10:59 EST 2010
             - Adjusted Perl version requirement to >= 5.8.3 from 5.8.9.  This is essentially the requirement of Moose as well.
             - Updated some documentation
+
+1.08        Sun Jan 16 02:16:59 EST 2011
+            - Updated Zenoss.pm to process login to Zenoss upon establishing object.  This will allow for better upfront error checking
+            - Fixed some documentation errors in Zenoss::Router::Device

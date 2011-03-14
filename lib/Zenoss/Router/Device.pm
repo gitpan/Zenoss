@@ -2285,7 +2285,7 @@ Success or failure message
 
 =head2 $obj->device_deleteComponents()
 
-Lock component(s) from changes.
+Delete device component(s).
 
 =over
 
@@ -2341,7 +2341,7 @@ Success or failure message
 
 =head2 $obj->device_removeDevices()
 
-Lock component(s) from changes.
+Remove/delete device(s).
 
 =over
 

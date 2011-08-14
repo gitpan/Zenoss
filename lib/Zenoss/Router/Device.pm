@@ -1331,12 +1331,16 @@ Zenoss::Router::Device - A JSON/ExtDirect interface to operations on devices
 
 This module is NOT instantiated directly.  To call methods from this module create an
 instance of L<Zenoss>.  This document serves as a resource of available Zenoss API
-calls available to L<Zenoss>.
+calls to L<Zenoss>.
 
 =head1 METHODS
 
 The following is a list of available methods available for interaction with the Zenoss API.
 Please take note of the argument requirements, defaults and return content.
+
+The documentation for this module was mostly taken from the Zenoss JSON API docs.  Keep in mind
+that their (Zenoss Monitoring System) programming is based around python, so descriptions such as 
+dictionaries will be represented as hashes in Perl.
 
 =head2 $obj->device_addLocationNode()
 
@@ -1636,6 +1640,42 @@ N/A
 data: (dictionary) Object properties
 
 disabled: (bool) If current user doesn't have permission to use setInfo
+
+=back
+
+=head2 $obj->device_setInfo()
+
+Set attributes on a device or device organizer.
+
+=over
+
+=item ARGUMENTS
+
+This method accepts any keyword argument for the property that you wish to set.
+
+=back
+
+=over
+
+=item REQUIRED ARGUMENTS
+
+uid
+
+=back
+
+=over
+
+=item DEFAULT ARGUMENTS
+
+N/A
+
+=back
+
+=over
+
+=item RETURNS
+
+DirectResponse
 
 =back
 

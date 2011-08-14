@@ -136,7 +136,7 @@ Zenoss::Router::Tree - A common base class for routers that have a hierarchical 
 
 This module is NOT instantiated directly.  To call methods from this module create an
 instance of L<Zenoss>.  This document serves as a resource of available Zenoss API
-calls available to L<Zenoss>.
+calls to L<Zenoss>.
 
 The following Zenoss::Router:: modules implement methods from Zenoss::Router::Tree
 
@@ -168,6 +168,10 @@ L<Zenoss::Router::Template>
 
 The following is a list of available methods available for interaction with the Zenoss API.
 Please take note of the argument requirements, defaults and return content.
+
+The documentation for this module was mostly taken from the Zenoss JSON API docs.  Keep in mind
+that their (Zenoss Monitoring System) programming is based around python, so descriptions such as 
+dictionaries will be represented as hashes in Perl.
 
 =head2 $obj->addNode()
 

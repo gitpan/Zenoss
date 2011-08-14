@@ -5,7 +5,7 @@ use Moose;
 use Zenoss::Connector;
 use Zenoss::Router;
 
-our $VERSION = '1.08';
+our $VERSION = '1.09';
 
 #**************************************************************************
 # Public methods
@@ -134,6 +134,10 @@ L<Zenoss::Router::Process>
 =item *
 
 L<Zenoss::Router::Report>
+
+=item *
+
+L<Zenoss::Router::Search>
 
 =item *
 

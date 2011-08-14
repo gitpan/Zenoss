@@ -24,7 +24,7 @@ Revision history for Zenoss
             - Zenoss::Response hash() was renamed to decoded().  This is because JSON can return an ARRAYREF as well
             - Zenoss::Response hash(), now called decoded(), now only returns the result JSON data structure, unless result doesnt exist
             - New attributes in Zenoss::Response received_tid and send_tid
-            
+
 1.07        Mon Dec 13 10:10:59 EST 2010
             - Adjusted Perl version requirement to >= 5.8.3 from 5.8.9.  This is essentially the requirement of Moose as well.
             - Updated some documentation
@@ -32,3 +32,7 @@ Revision history for Zenoss
 1.08        Sun Jan 16 02:16:59 EST 2011
             - Updated Zenoss.pm to process login to Zenoss upon establishing object.  This will allow for better upfront error checking
             - Fixed some documentation errors in Zenoss::Router::Device
+
+1.09        Sun Aug 14 14:15:32 EDT 2011
+            - rt.cpan.org # 70143 - Documentation fixes
+            - rt.cpan.org # 70064 - Add API features that were not documented by Zenoss - Zenoss::Router::Search

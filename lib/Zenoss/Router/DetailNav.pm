@@ -134,12 +134,16 @@ Zenoss::Router::DetailNav - Router to Details navigation for given uid
 
 This module is NOT instantiated directly.  To call methods from this module create an
 instance of L<Zenoss>.  This document serves as a resource of available Zenoss API
-calls available to L<Zenoss>.
+calls to L<Zenoss>.
 
 =head1 METHODS
 
 The following is a list of available methods available for interaction with the Zenoss API.
 Please take note of the argument requirements, defaults and return content.
+
+The documentation for this module was mostly taken from the Zenoss JSON API docs.  Keep in mind
+that their (Zenoss Monitoring System) programming is based around python, so descriptions such as 
+dictionaries will be represented as hashes in Perl.
 
 The documentation here is a bit sketcky as I dont have all the information.  What I've placed here is what I know
 from reading the Zenoss JSON API documentation.  In the event the method calls become clearer I will update this.

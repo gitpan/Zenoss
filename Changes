@@ -36,3 +36,6 @@ Revision history for Zenoss
 1.09        Sun Aug 14 14:15:32 EDT 2011
             - rt.cpan.org # 70143 - Documentation fixes
             - rt.cpan.org # 70064 - Add API features that were not documented by Zenoss - Zenoss::Router::Search
+
+1.10        Sun Aug 14 20:10:37 EDT 2011
+            - Didn't include Zenoss::Router::Search in the MANIFEST, thus PAUSE didn't process the new file for distribution.  Fixed in this version.

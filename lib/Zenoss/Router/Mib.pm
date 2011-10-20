@@ -29,7 +29,27 @@ has 'MIB_ACTION' => (
 #======================================================================
 sub mib_getTree {
     my ($self, $args) = @_;
-    $self->_croak('The MibRouter API is not yet implemented on Zenoss');
+    $args = {} if !$args;
+
+    # Argument definition
+    my $definition = {
+        defaults    => {
+            id  => '/zport/dmd/Mibs'
+        }
+    };
+
+    # Check the args
+    $self->_check_args($args, $definition);
+
+    # Route the request
+    $self->_router_request(
+        {
+            location    => $self->DEVICE_LOCATION,
+            action      => $self->DEVICE_ACTION,
+            method      => 'getTree',
+            data        => [$args],
+        }
+    );
 } # END mib_getTree
 
 #======================================================================
@@ -37,8 +57,188 @@ sub mib_getTree {
 #======================================================================
 sub mib_getOrganizerTree {
     my ($self, $args) = @_;
-    $self->_croak('The MibRouter API is not yet implemented on Zenoss');
+    $args = {} if !$args;
+
+    # Argument definition
+    my $definition = {
+        required    => ['id'],
+    };
+
+    # Check the args
+    $self->_check_args($args, $definition);
+
+    # Route the request
+    $self->_router_request(
+        {
+            location    => $self->DEVICE_LOCATION,
+            action      => $self->DEVICE_ACTION,
+            method      => 'getOrganizerTree',
+            data        => [$args],
+        }
+    );
 } # END mib_getOrganizerTree
+
+#======================================================================
+# mib_addNode
+#======================================================================
+sub mib_addNode {
+    my ($self, $args) = @_;
+    $args = {} if !$args;
+
+    # Argument definition
+    my $definition = {
+        required    => ['contextUid', 'id', 'type'],
+    };
+
+    # Check the args
+    $self->_check_args($args, $definition);
+
+    # Route the request
+    $self->_router_request(
+        {
+            location    => $self->DEVICE_LOCATION,
+            action      => $self->DEVICE_ACTION,
+            method      => 'addNode',
+            data        => [$args],
+        }
+    );
+} # END mib_addNode
+
+#======================================================================
+# mib_addMIB
+#======================================================================
+sub mib_addMIB {
+    my ($self, $args) = @_;
+    $args = {} if !$args;
+
+    # Argument definition
+    my $definition = {
+        required    => ['package'],
+        defaults    => {
+            organizer   => '/',
+        },
+    };
+
+    # Check the args
+    $self->_check_args($args, $definition);
+
+    # Route the request
+    $self->_router_request(
+        {
+            location    => $self->DEVICE_LOCATION,
+            action      => $self->DEVICE_ACTION,
+            method      => 'addMIB',
+            data        => [$args],
+        }
+    );
+} # END mib_addMIB
+
+#======================================================================
+# mib_deleteNode
+#======================================================================
+sub mib_deleteNode {
+    my ($self, $args) = @_;
+    $args = {} if !$args;
+
+    # Argument definition
+    my $definition = {
+        required    => ['uid'],
+    };
+
+    # Check the args
+    $self->_check_args($args, $definition);
+
+    # Route the request
+    $self->_router_request(
+        {
+            location    => $self->DEVICE_LOCATION,
+            action      => $self->DEVICE_ACTION,
+            method      => 'deleteNode',
+            data        => [$args],
+        }
+    );
+} # END mib_deleteNode
+
+#======================================================================
+# mib_moveNode
+#======================================================================
+sub mib_moveNode {
+    my ($self, $args) = @_;
+    $args = {} if !$args;
+
+    # Argument definition
+    my $definition = {
+        required    => ['uids', 'target'],
+    };
+
+    # Check the args
+    $self->_check_args($args, $definition);
+
+    # Route the request
+    $self->_router_request(
+        {
+            location    => $self->DEVICE_LOCATION,
+            action      => $self->DEVICE_ACTION,
+            method      => 'moveNode',
+            data        => [$args],
+        }
+    );
+} # END mib_moveNode
+
+#======================================================================
+# mib_getInfo
+#======================================================================
+sub mib_getInfo {
+    my ($self, $args) = @_;
+    $args = {} if !$args;
+
+    # Argument definition
+    my $definition = {
+        required    => ['uid'],
+        defaults    => {
+            useFieldSets    => JSON::true,
+        }
+    };
+
+    # Check the args
+    $self->_check_args($args, $definition);
+
+    # Route the request
+    $self->_router_request(
+        {
+            location    => $self->DEVICE_LOCATION,
+            action      => $self->DEVICE_ACTION,
+            method      => 'getInfo',
+            data        => [$args],
+        }
+    );
+} # END mib_getInfo
+
+#======================================================================
+# mib_setInfo
+#======================================================================
+sub mib_setInfo {
+    my ($self, $args) = @_;
+    $args = {} if !$args;
+
+    # Argument definition
+    my $definition = {
+        required    => ['uid'],
+    };
+
+    # Check the args
+    $self->_check_args($args, $definition);
+
+    # Route the request
+    $self->_router_request(
+        {
+            location    => $self->DEVICE_LOCATION,
+            action      => $self->DEVICE_ACTION,
+            method      => 'setInfo',
+            data        => [$args],
+        }
+    );
+} # END mib_setInfo
 
 #**************************************************************************
 # Package end
@@ -87,7 +287,275 @@ The documentation for this module was mostly taken from the Zenoss JSON API docs
 that their (Zenoss Monitoring System) programming is based around python, so descriptions such as 
 dictionaries will be represented as hashes in Perl.
 
-B<Mib is currently broken as Zenoss hasnt implemented the JSON interface>
+B<Mib is now working in Zenoss 3.2 - but the API docs are sketchy.  You might need to trial and error to get things to work correctly.  I recommend using FireBug with the UI to see what parameters are supposed to be sent!>
+
+=head2 $obj->device_getTree()
+
+Not documented - however it likely returns the organizational structure of install mibs
+
+=over
+
+=item ARGUMENTS
+
+id
+
+=back
+
+=over
+
+=item REQUIRED ARGUMENTS
+
+id
+
+=back
+
+=over
+
+=item DEFAULT ARGUMENTS
+
+{id => '/zport/dmd/Mibs}
+
+=back
+
+=over
+
+=item RETURNS
+
+data: ([dictionary])
+
+=back
+
+=head2 $obj->device_getOrganizerTree()
+
+Not documented
+
+=over
+
+=item ARGUMENTS
+
+id
+
+=back
+
+=over
+
+=item REQUIRED ARGUMENTS
+
+id
+
+=back
+
+=over
+
+=item DEFAULT ARGUMENTS
+
+N/A
+
+=back
+
+=over
+
+=item RETURNS
+
+data: ([dictionary])
+
+=back
+
+=head2 $obj->device_addNode()
+
+Add organizer or MIB
+
+=over
+
+=item ARGUMENTS
+
+contextUid (string)
+
+id (string)
+
+type (string) - Can be either organizer or MIB
+
+=back
+
+=over
+
+=item REQUIRED ARGUMENTS
+
+id
+
+=back
+
+=over
+
+=item DEFAULT ARGUMENTS
+
+N/A
+
+=back
+
+=over
+
+=item RETURNS
+
+tree: ([dictionary])
+
+=back
+
+=head2 $obj->device_deleteNode()
+
+Delete node
+
+=over
+
+=item ARGUMENTS
+
+uid (string)
+
+=back
+
+=over
+
+=item REQUIRED ARGUMENTS
+
+uid
+
+=back
+
+=over
+
+=item DEFAULT ARGUMENTS
+
+N/A
+
+=back
+
+=over
+
+=item RETURNS
+
+tree: ([dictionary])
+
+=back
+
+=head2 $obj->device_moveNode()
+
+Move a node from its current organizer to another
+
+=over
+
+=item ARGUMENTS
+
+uids (list of strings)
+
+target (string)
+
+=back
+
+=over
+
+=item REQUIRED ARGUMENTS
+
+uids
+
+target
+
+=back
+
+=over
+
+=item DEFAULT ARGUMENTS
+
+N/A
+
+=back
+
+=over
+
+=item RETURNS
+
+tree: ([dictionary])
+
+=back
+
+=head2 $obj->device_getInfo()
+
+Returns the details of a single info object as well as the form describing its schema
+
+=over
+
+=item ARGUMENTS
+
+uid (string)
+
+useFieldSets (bool)
+
+=back
+
+=over
+
+=item REQUIRED ARGUMENTS
+
+uid
+
+=back
+
+=over
+
+=item DEFAULT ARGUMENTS
+
+{useFieldSets => JSON::true}
+
+=back
+
+=over
+
+=item RETURNS
+
+success: ([bool])
+
+data: ([dictionary])
+
+=back
+
+=head2 $obj->device_setInfo()
+
+Set info - no description
+
+=over
+
+=item ARGUMENTS
+
+uid (string)
+
+any vars that can be set?
+
+=back
+
+=over
+
+=item REQUIRED ARGUMENTS
+
+uid
+
+any vars that can be set?
+
+=back
+
+=over
+
+=item DEFAULT ARGUMENTS
+
+N/A
+
+=back
+
+=over
+
+=item RETURNS
+
+data: ([dictionary])
+
+=back
 
 =head1 SEE ALSO
 

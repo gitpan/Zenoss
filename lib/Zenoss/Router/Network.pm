@@ -216,6 +216,32 @@ sub network_getIpAddresses {
     );
 } # END network_getIpAddresses
 
+#======================================================================
+# network_removeIpAddresses
+#======================================================================
+sub network_removeIpAddresses {
+    my ($self, $args) = @_;
+    $args = {} if !$args;
+
+    # Argument definition
+    my $definition = {
+        uids    => ['uids'],
+    };
+
+    # Check the args
+    $self->_check_args($args, $definition);
+
+    # Route the request
+    $self->_router_request(
+        {
+            location    => $self->NETWORK_LOCATION,
+            action      => $self->NETWORK_ACTION,
+            method      => 'removeIpAddresses',
+            data        => [$args],
+        }
+    );
+} # END network_removeIpAddresses
+
 #**************************************************************************
 # Package end
 #**************************************************************************
@@ -526,6 +552,44 @@ uid
 =item RETURNS
 
 Not documented
+
+=back
+
+=head2 $obj->network_removeIpAddresses()
+
+Removes every ip address specified by uids that are not attached to any device
+
+=over
+
+=item ARGUMENTS
+
+uids (list string) - List of uid's to remove IP addresses on
+
+=back
+
+=over
+
+=item REQUIRED ARGUMENTS
+
+uids
+
+=back
+
+=over
+
+=item DEFAULT ARGUMENTS
+
+N/A
+
+=back
+
+=over
+
+=item RETURNS
+
+removedCount: (integer)
+
+errorCount: (integer)
 
 =back
 

@@ -56,6 +56,16 @@ has sent_tid => (
 );
 
 #**************************************************************************
+# Private Attributes
+#**************************************************************************
+# Method that send the API call off
+has '_caller' => (
+    is	        => 'ro',
+    isa	        => 'Str',
+    required    => 1,
+);
+
+#**************************************************************************
 # Private Methods
 #**************************************************************************
 #======================================================================
@@ -85,7 +95,7 @@ sub _build_decoded {
 #======================================================================
 # _build_received_tid
 #======================================================================
-sub _build_received_tid  {
+sub _build_received_tid {
     my $self = shift;
 
     # just call _build_decoded - it does the same thing
@@ -93,6 +103,28 @@ sub _build_received_tid  {
     # of the data structure
     $self->_build_decoded;
 } # END _build_received_tid
+
+#======================================================================
+# _validate_api_method_exists
+#
+# This method will determine if the API allowed the method to be
+# executed on the Zenoss server
+#======================================================================
+sub _validate_api_method_exists {
+    my $self = shift;
+
+    # Check to see if we have a 500 HTTP ERROR
+    if ($self->http_code() == 500) {
+        # Check to see if Zenoss reported the API call unavailable
+        if ($self->raw_response() =~ m/is not the name of a method on/) {
+            my $caller = $self->_caller();
+            $self->_croak("[$caller] is not an available API call with your version of Zenoss. Upgrade your Zenoss to a later version!");
+        }
+    }
+
+    # All good, return the response object
+    return $self;
+} # END _validate_api_method_exists
 
 #**************************************************************************
 # Package end

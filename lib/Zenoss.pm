@@ -5,7 +5,7 @@ use Moose;
 use Zenoss::Connector;
 use Zenoss::Router;
 
-our $VERSION = '1.10';
+our $VERSION = '1.11';
 
 #**************************************************************************
 # Public methods
@@ -31,7 +31,7 @@ sub _connect {
             connector => Zenoss::Connector->new($args),
         }
     );
-    
+
     $router->_process_login;
     return $router;
 } # END connect
@@ -54,7 +54,7 @@ Zenoss - Perl interface to the Zenoss JSON API
 
     use Zenoss;
     use Data::Dumper;
-    
+
     # Create a Zenoss object
     my $api = Zenoss->connect(
         {
@@ -63,19 +63,19 @@ Zenoss - Perl interface to the Zenoss JSON API
             url         => 'http://zenossinstance:8080',
         }
     );
-    
+
     # Issue a request to get all devices from Zenoss Monitoring System
     my $response = $api->device_getDevices();
-    
+
     # $response is now an instance of Zenoss::Response
     # now we can do things like
     print $response->json();
     print $response->http_code();
-    
+
     # get the response in a perl reference
     my $ref = $response->decoded();
     print Dumper $ref;
-    
+
     # Query events, with history, and only return
     # events that have a severity of 0,1,2,3,4 or 5
     my $events = $api->events_query(

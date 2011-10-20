@@ -34,7 +34,6 @@ has '_agent' => (
     builder         => '_build_agent',
     lazy            => 1,
     init_arg        => undef,
-    
 );
 
 has '_is_authenticated' => (
@@ -79,7 +78,7 @@ sub BUILD {
                     return unless $File::Find::name =~ /\.pm$/;
                     (my $path = $File::Find::name) =~ s!^\\./!!;
                     my ($filename,undef, $suffix) = fileparse($path, '.pm');
-                    
+
                     # Storing in a hash will allow for de-duplication
                     $router{$filename} = 1 unless $filename eq 'Tree';
                 },
@@ -129,12 +128,14 @@ sub _router_request {
     $query->content($json_encoder->encode($JSON_DATA));
 
     # Return Zenoss::Response object
+    my (undef, undef, undef, $hints, undef, undef) = caller(1);
     return Zenoss::Response->new(
         {
             handler             => $self->_agent->request($query),
             sent_tid            => $self->_transaction_count,
+            _caller             => $hints,
         }
-    );
+    )->_validate_api_method_exists();
 } # END _router_request
 
 #======================================================================
@@ -158,7 +159,7 @@ sub _check_args {
             }
         }
     }
-    
+
     # Check for required parameters
     if (exists($definition->{'required'})) {
         foreach my $requirement (@{$definition->{'required'}}) {
@@ -215,7 +216,7 @@ sub _process_login {
     # Setup the test query
     my $query = HTTP::Request->new(POST => "$zenoss_url/zport/dmd/");
     $query->content_type('application/json; charset=utf-8');
-    
+
     # Process the test query
     my $response = $self->_agent->request($query);
     if ($response->is_success && $response->code == 200) {

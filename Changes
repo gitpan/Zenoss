@@ -39,3 +39,10 @@ Revision history for Zenoss
 
 1.10        Sun Aug 14 20:10:37 EDT 2011
             - Didn't include Zenoss::Router::Search in the MANIFEST, thus PAUSE didn't process the new file for distribution.  Fixed in this version.
+
+1.11        Wed Oct 19 22:44:06 EDT 2011
+            - Due to the differing versions of Zenoss a new internal method will now detect if the API call is available for the Zenoss version.
+            - Updated Zenoss::Router::Device to support new API methods in Zenoss 3.2
+            - Updated Zenoss::Router::Mib to support new API methods in Zenoss 3.2
+            - Updated Zenoss::Router::Network to support new API methods in Zenoss 3.2
+            - Fixed bug with Zenoss::Router::Device::device_bindOrUnbindTemplate

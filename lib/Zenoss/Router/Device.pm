@@ -1225,7 +1225,7 @@ sub device_bindOrUnbindTemplate {
 
     # Argument definition
     my $definition = {
-        required    => ['uid'. 'templateUid'],
+        required    => ['uid', 'templateUid'],
     };
 
     # Check the args
@@ -1294,6 +1294,241 @@ sub device_clearGeocodeCache {
         }
     );
 } # END device_clearGeocodeCache
+
+#======================================================================
+# device_getGraphDefs
+#======================================================================
+sub device_getGraphDefs {
+    my ($self, $args) = @_;
+    $args = {} if !$args;
+
+    # Argument definition
+    my $definition = {
+        required    => ['uid'],
+    };
+
+    # Check the args
+    $self->_check_args($args, $definition);
+
+    # Route the request
+    $self->_router_request(
+        {
+            location    => $self->DEVICE_LOCATION,
+            action      => $self->DEVICE_ACTION,
+            method      => 'getGraphDefs',
+            data        => [$args],
+        }
+    );
+} # END device_getGraphDefs
+
+#======================================================================
+# device_getGroups
+#======================================================================
+sub device_getGroups {
+    my ($self, $args) = @_;
+    $args = {} if !$args;
+
+    # Argument definition
+    my $definition = {};
+
+    # Check the args
+    $self->_check_args($args, $definition);
+
+    # Route the request
+    $self->_router_request(
+        {
+            location    => $self->DEVICE_LOCATION,
+            action      => $self->DEVICE_ACTION,
+            method      => 'getGroups',
+            data        => [$args],
+        }
+    );
+} # END device_getGroups
+
+#======================================================================
+# device_getLocations
+#======================================================================
+sub device_getLocations {
+    my ($self, $args) = @_;
+    $args = {} if !$args;
+
+    # Argument definition
+    my $definition = {};
+
+    # Check the args
+    $self->_check_args($args, $definition);
+
+    # Route the request
+    $self->_router_request(
+        {
+            location    => $self->DEVICE_LOCATION,
+            action      => $self->DEVICE_ACTION,
+            method      => 'getLocations',
+            data        => [$args],
+        }
+    );
+} # END device_getLocations
+
+#======================================================================
+# device_getModifications
+#======================================================================
+sub device_getModifications {
+    my ($self, $args) = @_;
+    $args = {} if !$args;
+
+    # Argument definition
+    my $definition = {
+        defaults    => {
+            types   => JSON::null
+        },
+        required        => ['id'],
+    };
+
+    # Check the args
+    $self->_check_args($args, $definition);
+
+    # Route the request
+    $self->_router_request(
+        {
+            location    => $self->DEVICE_LOCATION,
+            action      => $self->DEVICE_ACTION,
+            method      => 'getModifications',
+            data        => [$args],
+        }
+    );
+} # END device_getModifications
+
+#======================================================================
+# device_getSystems
+#======================================================================
+sub device_getSystems {
+    my ($self, $args) = @_;
+    $args = {} if !$args;
+
+    # Argument definition
+    my $definition = {};
+
+    # Check the args
+    $self->_check_args($args, $definition);
+
+    # Route the request
+    $self->_router_request(
+        {
+            location    => $self->DEVICE_LOCATION,
+            action      => $self->DEVICE_ACTION,
+            method      => 'getSystems',
+            data        => [$args],
+        }
+    );
+} # END device_getSystems
+
+#======================================================================
+# device_getZenProperties
+#======================================================================
+sub device_getZenProperties {
+    my ($self, $args) = @_;
+    $args = {} if !$args;
+
+    # Argument definition
+    my $definition = {
+        defaults    => {
+            start   => 0,
+            dir     => 'ASC',
+        },
+        required    => ['uid'],
+    };
+
+    # Check the args
+    $self->_check_args($args, $definition);
+
+    # Route the request
+    $self->_router_request(
+        {
+            location    => $self->DEVICE_LOCATION,
+            action      => $self->DEVICE_ACTION,
+            method      => 'getZenProperties',
+            data        => [$args],
+        }
+    );
+} # END device_getZenProperties
+
+#======================================================================
+# device_getZenProperty
+#======================================================================
+sub device_getZenProperty {
+    my ($self, $args) = @_;
+    $args = {} if !$args;
+
+    # Argument definition
+    my $definition = {
+        required    => ['uid', 'zProperty'],
+    };
+
+    # Check the args
+    $self->_check_args($args, $definition);
+
+    # Route the request
+    $self->_router_request(
+        {
+            location    => $self->DEVICE_LOCATION,
+            action      => $self->DEVICE_ACTION,
+            method      => 'getZenProperty',
+            data        => [$args],
+        }
+    );
+} # END device_getZenProperty
+
+#======================================================================
+# device_deleteZenProperty
+#======================================================================
+sub device_deleteZenProperty {
+    my ($self, $args) = @_;
+    $args = {} if !$args;
+
+    # Argument definition
+    my $definition = {
+        required    => ['uid', 'zProperty'],
+    };
+
+    # Check the args
+    $self->_check_args($args, $definition);
+
+    # Route the request
+    $self->_router_request(
+        {
+            location    => $self->DEVICE_LOCATION,
+            action      => $self->DEVICE_ACTION,
+            method      => 'deleteZenProperty',
+            data        => [$args],
+        }
+    );
+} # END device_deleteZenProperty
+
+#======================================================================
+# device_setZenProperty
+#======================================================================
+sub device_setZenProperty {
+    my ($self, $args) = @_;
+    $args = {} if !$args;
+
+    # Argument definition
+    my $definition = {
+        required    => ['uid', 'zProperty', 'value'],
+    };
+
+    # Check the args
+    $self->_check_args($args, $definition);
+
+    # Route the request
+    $self->_router_request(
+        {
+            location    => $self->DEVICE_LOCATION,
+            action      => $self->DEVICE_ACTION,
+            method      => 'setZenProperty',
+            data        => [$args],
+        }
+    );
+} # END device_setZenProperty
 
 #**************************************************************************
 # Package end
@@ -1989,7 +2224,7 @@ Success or failure message
 
 =head2 $obj->device_resetCommunity()
 
-Reset IP address(es) of device(s) to the results of a DNS lookup or a manually set address
+Reset community string of device(s)
 
 =over
 
@@ -3352,6 +3587,368 @@ N/A
 =item RETURNS
 
 Success message
+
+=back
+
+=head2 $obj->device_getGraphDefs()
+
+Returns the url and title for each graph for the object passed in.
+
+=over
+
+=item ARGUMENTS
+
+uid (string) - uid of the device
+
+drange (unknown) - I assume this is some type of date range, but the API doesnt document how to specify.
+
+=back
+
+=over
+
+=item REQUIRED ARGUMENTS
+
+uid
+
+=back
+
+=over
+
+=item DEFAULT ARGUMENTS
+
+N/A
+
+=back
+
+=over
+
+=item RETURNS
+
+data: ([dictionary]) List of objects representing urls / titles for each graph
+
+=back
+
+=head2 $obj->device_getGroups()
+
+Get a list of all groups
+
+=over
+
+=item ARGUMENTS
+
+N/A
+
+=back
+
+=over
+
+=item REQUIRED ARGUMENTS
+
+N/A
+
+=back
+
+=over
+
+=item DEFAULT ARGUMENTS
+
+N/A
+
+=back
+
+=over
+
+=item RETURNS
+
+systems: ([dictionary]) List of groups
+
+totalCount: (integer) Total number of groups
+
+=back
+
+=head2 $obj->device_getLocations()
+
+Get a list of all locations
+
+=over
+
+=item ARGUMENTS
+
+N/A
+
+=back
+
+=over
+
+=item REQUIRED ARGUMENTS
+
+N/A
+
+=back
+
+=over
+
+=item DEFAULT ARGUMENTS
+
+N/A
+
+=back
+
+=over
+
+=item RETURNS
+
+systems: ([dictionary]) List of locations
+
+totalCount: (integer) Total number of locations
+
+=back
+
+=head2 $obj->device_getModifications()
+
+Given a uid this method returns meta data about when it was modified.
+
+=over
+
+=item ARGUMENTS
+
+id (string) - uid of a device
+
+types (dictionary) - Not sure what this really is.  Python code says it sorts by this?
+
+=back
+
+=over
+
+=item REQUIRED ARGUMENTS
+
+id
+
+=back
+
+=over
+
+=item DEFAULT ARGUMENTS
+
+{types => JSON::null}
+
+=back
+
+=over
+
+=item RETURNS
+
+data: ([dictionary]) List of device modifications
+
+=back
+
+=head2 $obj->device_getSystems()
+
+Get a list of all systems
+
+=over
+
+=item ARGUMENTS
+
+N/A
+
+=back
+
+=over
+
+=item REQUIRED ARGUMENTS
+
+N/A
+
+=back
+
+=over
+
+=item DEFAULT ARGUMENTS
+
+N/A
+
+=back
+
+=over
+
+=item RETURNS
+
+systems: ([dictionary]) List of systems
+
+totalCount: (integer) Total number of systems
+
+=back
+
+=head2 $obj->device_getZenProperties()
+
+Returns the definition and values of all the zen properties for this context
+
+=over
+
+=item ARGUMENTS
+
+uid (string) - Unique identifier of the device
+
+start (integer) - Offset to return the results from; used in pagination
+
+params (dictionary) - Key-value pair of filters for this search
+
+limit (integer) - Number of items to return; used in pagination
+
+sort (string) - Key on which to sort the return results
+
+dir (string) - Sort order; can be either 'ASC' or 'DESC'
+
+=back
+
+=over
+
+=item REQUIRED ARGUMENTS
+
+uid
+
+=back
+
+=over
+
+=item DEFAULT ARGUMENTS
+
+{start => 0, dir => 'ASC'}
+
+=back
+
+=over
+
+=item RETURNS
+
+data: ([dictionary]) List of zProperties
+
+totalCount: (integer) Total number of properties
+
+=back
+
+=head2 $obj->device_getZenProperty()
+
+Returns information about a zProperty for a given context, including its value
+
+=over
+
+=item ARGUMENTS
+
+uid (string) - Unique identifier of the device
+
+zProperty (string) - Name of the zProperty
+
+=back
+
+=over
+
+=item REQUIRED ARGUMENTS
+
+uid
+
+zProperty
+
+=back
+
+=over
+
+=item DEFAULT ARGUMENTS
+
+N/A
+
+=back
+
+=over
+
+=item RETURNS
+
+data: ([dictionary]) zProperty information/data
+
+=back
+
+=head2 $obj->device_deleteZenProperty()
+
+Removes the local instance of the each property in properties. Note that the property will only be deleted if a hasProperty is true
+
+=over
+
+=item ARGUMENTS
+
+uid (string) - Unique identifier of the device
+
+zProperty (string) - Name of the zProperty
+
+=back
+
+=over
+
+=item REQUIRED ARGUMENTS
+
+uid
+
+zProperty
+
+=back
+
+=over
+
+=item DEFAULT ARGUMENTS
+
+N/A
+
+=back
+
+=over
+
+=item RETURNS
+
+data: ([dictionary]) zProperty information/data
+
+=back
+
+=head2 $obj->device_setZenProperty()
+
+Sets the zProperty value
+
+=over
+
+=item ARGUMENTS
+
+uid (string) - Unique identifier of the device
+
+zProperty (string) - Name of the zProperty
+
+value (type) - Value to set the zProperty to
+
+=back
+
+=over
+
+=item REQUIRED ARGUMENTS
+
+uid
+
+zProperty
+
+value
+
+=back
+
+=over
+
+=item DEFAULT ARGUMENTS
+
+N/A
+
+=back
+
+=over
+
+=item RETURNS
+
+data: ([dictionary]) zProperty information/data response
 
 =back
 
